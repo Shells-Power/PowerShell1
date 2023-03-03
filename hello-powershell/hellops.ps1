@@ -1,10 +1,10 @@
-$servers = @('google.com', 'outlook.com', 'gmail.com')
+$servers = @('google.com', 'outlook.com', 'gmail.com', 'bxvyuhsdbjndljfv.com')
 
 foreach ($serverName in $servers) {
-    
-    $serversStatus = Test-Connection -ComputerName $serverName -Quiet -Count 1
 
-    if ($serversStatus -eq $true) {
+    $isServersUp = Test-Connection -ComputerName $serverName -Quiet -Count 1
+
+    if ($isServersUp -eq $true) {
         Write-Output "$serverName is Up & Running"
     }
     else {
